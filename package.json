@@ -4,7 +4,9 @@
   "description": "A simple math library to demonstrate a modern setup of a library or an NPM package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx eslint ./",
+    "lint:fix": "npx eslint ./ --fix",
+    "format": "npx prettier-eslint \"$PWD/src/**/*.js\" --write"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/npranto/math.js/issues"
   },
-  "homepage": "https://github.com/npranto/math.js#readme"
+  "homepage": "https://github.com/npranto/math.js#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "prettier-eslint": "^9.0.1",
+    "prettier-eslint-cli": "^5.0.0"
+  }
 }
