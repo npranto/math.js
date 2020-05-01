@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const math = require('./src');
 
 console.log(math.add(1, 2, 3));
