@@ -1,0 +1,26 @@
+{
+  "name": "nsp-math",
+  "version": "0.0.1",
+  "description": "A simple math library to demonstrate a modern setup of a library or an NPM package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npranto/math.js.git"
+  },
+  "keywords": [
+    "math.js",
+    "modern-web-dev",
+    "setup",
+    "library",
+    "package"
+  ],
+  "author": "Nazmuz Pranto <npranto@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npranto/math.js/issues"
+  },
+  "homepage": "https://github.com/npranto/math.js#readme"
+}

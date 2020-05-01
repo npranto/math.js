@@ -52,6 +52,9 @@ A list of steps to ensure that a library or an npm package is setup with modern 
 
 <h2 class="header"> Instructions </h2>
 
+### Setup Package Manager w/ NPM
+- run `npm init` and setup a package.json file on the root
+
 ### Setup .editorconfig
 - refer to https://editorconfig.org/
 - complete list of EditorConfig Properties - https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
@@ -67,7 +70,7 @@ A list of steps to ensure that a library or an npm package is setup with modern 
 ### Setup .gitignore
 - to ignore files and/or directories that we want to exclude from being committed to git.
 
-### Setup "Husky" As Git Hooks
+### Setup "Husky" for Git Hooks
 - perform certain task(s) on git commit or push, like `npm test` or `npm run lint`
 
 ### Setup ESLint w/ Prettier Integration
