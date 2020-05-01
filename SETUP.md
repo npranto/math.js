@@ -53,15 +53,60 @@ A list of steps to ensure that a library or an npm package is setup with modern 
 <h2 class="header"> Instructions </h2>
 
 ### Setup Package Manager w/ NPM
-- run `npm init` and setup a package.json file on the root
+- on the root level, run `npm init` and setup a package.json file
+- example:
+```json
+{
+  "name": "nsp-math",
+  "version": "0.0.1",
+  "description": "A simple math library to demonstrate a modern setup of a library or an NPM package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npranto/math.js.git"
+  },
+  "keywords": [
+    "math.js",
+    "modern-web-dev",
+    "setup",
+    "library",
+    "package"
+  ],
+  "author": "Nazmuz Pranto <npranto@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npranto/math.js/issues"
+  },
+  "homepage": "https://github.com/npranto/math.js#readme"
+}
+```
+
 
 ### Setup .editorconfig
-- refer to https://editorconfig.org/
-- complete list of EditorConfig Properties - https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
-- how to setup:
+- a set of rules for code editors to follow standard, consistent coding style
+- on the root level, create a new file `.editorconfig` and setup a list of editorconfig properties in it
+- for a complete list of EditorConfig Properties, refer to https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+- for VSCode to abide by the editorconfig rules, install the `EditorConfig for VS Code` extension
+- resources:
   - https://www.youtube.com/watch?v=YbHw1VdjWbA&t=2s
   - https://www.youtube.com/watch?v=5eOCn7KTac4
   - https://www.youtube.com/watch?v=NyhIcUbyj6U
+- example:
+```
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace: true
+insert_final_newline: true
+```
 
 ### Setup ESLint
 - refer to https://eslint.org/
@@ -132,7 +177,7 @@ A list of steps to ensure that a library or an npm package is setup with modern 
 
 <style>
   .header {
-    font-weight: bold; 
+    font-weight: bold;
     border-bottom: 3px solid orange;
   }
   .center {
