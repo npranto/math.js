@@ -269,6 +269,16 @@ dist
 ### Setup "Husky" for Git Hooks
 
 - perform certain task(s) on git commit or push, like `npm test` or `npm run lint`
+- install husky - `npm install -D husky`
+- configure a `.huskyrc.json` file to use git precommit and prepush hooks
+
+```
+{
+  "hooks": {
+    "pre-commit": "npm run lint"
+  }
+}
+```
 
 ### Add Rollup Bundler:
 
