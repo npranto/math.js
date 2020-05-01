@@ -1,3 +1,5 @@
-const multiply = (...values) => values.reduce((total, value) => total * value, 1);
+import reduce from 'lodash/reduce';
 
-module.exports = multiply;
+const multiply = (...values) => reduce(values, (total, value) => total * value, 1);
+
+export default multiply;

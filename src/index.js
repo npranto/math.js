@@ -1,9 +1,9 @@
-const add = require('./add');
-const subtract = require('./subtract');
-const multiply = require('./multiply');
-const divide = require('./divide');
+import add from './add';
+import subtract from './subtract';
+import multiply from './multiply';
+import divide from './divide';
 
-module.exports = {
+export {
   add,
   subtract,
   multiply,

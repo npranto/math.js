@@ -1,3 +1,5 @@
-const add = (...values) => values.reduce((total, value) => total + value, 0);
+import reduce from 'lodash/reduce';
 
-module.exports = add;
+const add = (...values) => reduce(values, (total, value) => total + value, 0);
+
+export default add;
