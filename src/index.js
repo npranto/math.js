@@ -1,3 +1,11 @@
-/* eslint-disable no-useless-concat */
-/* eslint-disable no-console */
-console.log('hello' + '' + 'world!');
+const add = require('./add');
+const subtract = require('./subtract');
+const multiply = require('./multiply');
+const divide = require('./divide');
+
+module.exports = {
+  add,
+  subtract,
+  multiply,
+  divide,
+};
