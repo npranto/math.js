@@ -421,6 +421,29 @@ dist
 
     export default App;
     ```
+### Add Unit Test:
+- install mocha - `npm install -D mocha`
+- install chai testing utility library -  `npm install -D chai`
+- add a `test` directory on the root level
+- add unit test files within it w/ `*.spec.js` or `*.test.js` extention
+- install babel specific packages in order to run ES6 code within unit test:
+  - @babel/core - `npm i -D @babel/core`
+  - @babel/preset-env - `npm i -D @babel/preset-env`
+  - @babel/register - `npm i -D @babel/register`
+- add preset within `.babelrc` file in the root
+```
+{
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+```
+- add an npm script to run tests:
+```
+"scripts": {
+  "test": "npx mocha --require @babel/register \"test/**/*.js\""
+},
+```
 
 <h2 class="header">Questions</h2>
 
