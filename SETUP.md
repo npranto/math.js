@@ -309,7 +309,118 @@ dist
 }
 ```
 
+### Add Examples
+- add examples of library being used properly with CommonJS, ES Module and in UMD format.
+- CommonJS
+  - add an `examples` directory to the root level
+  - create a directory inside it and name is `cjs`
+  - inside `cjs` directory:
+    - initialize npm - `npm init -y`
+    - install the library with npm by reference 2 levels up in the directory hierarchy like this:
+    ```
+    npm install ../..
+    ```
+    - now, you should have the library you want to test inside the package.json file within `cjs` directory
+    - now just create a simple `index.js` file in the `cjs` directory and test if the libraries functionalities work as expected.
+    ```
+    const myLibrary = require('my-library');
+    console.log(myLibrary); // checking if library functioalities are available
+    ```
+- UMD
+  - add an `examples` directory to the root level
+  - create a directory inside it and name is `umd`
+  - inside `umd` directory:
+    - initialize npm - `npm init -y`
+    - install the library with npm by reference 2 levels up in the directory hierarchy like this:
+    ```
+    npm install ../..
+    ```
+    - now, you should have the library you want to test inside the package.json file within `umd` directory
+    - create an `index.html` file
+    - add the basic level of HTML needed to render it on a browser, like this:
+    ```
+    <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+        </head>
+        <body>
+        </body>
+      </html>
+    ```
+    - add scripts to CDNs for any dependncies of the library, i.e., react, lodash, moment.js , like this:
+    ```
+    <body>
+      ...
+      <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+        integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+      ...
+    </body>
+    ```
+    - now add a script referencing the library you want to test from node_modules, like this:
+    ```
+    <body>
+      ...
+      <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+        integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+      ...
+      <script src="./node_modules/myLibrary/build/index.umd.js"></script>
+      ...
+    ```
+    - now, add another script tag underneath both dependencies and library scripts and test the usage of library, like this:
+    ```
+    <script>
+      const { add, subtract, multiply, divide } = window.myLibrary;
+      const addExample = add(1, 2, 3);
+      const subtractExample = subtract(10, 5);
+      const multiplyExample = multiply(1, 2, 3);
+      const divideExample = divide(10, 5);
 
+      // eslint-disable-next-line no-console
+      console.log({
+        addExample,
+        subtractExample,
+        multiplyExample,
+        divideExample,
+      });
+    </script>
+    ```
+- es
+  - To test ES Modules, it's best to install the library you want to test inside that project that utilizes webpack or rollup to bundle a project. Thus, as an example, just create a example `create-react-app` and test inside it
+  - create a directory inside it and name is `es`
+  - inside `es` directory:
+    - initialize npm - `npm init -y`
+    - install the library with npm by reference 2 levels up in the directory hierarchy like this:
+    ```
+    npm install ../..
+    ```
+    - now, you should have the library you want to test inside the package.json file within `es` directory
+    - import in the library inside a component and check to see if the functinalities are working as expected, like this
+    ```
+    import React from 'react';
+    import { add, subtract, multiply, divide } from 'myLibrary';
+
+    function App() {
+      const addExample = add(1, 2, 3);
+      const subtractExample = subtract(10, 5);
+      const multiplyExample = multiply(1, 2, 3);
+      const divideExample = divide(10, 5);
+
+      // eslint-disable-next-line no-console
+      console.log({
+        addExample,
+        subtractExample,
+        multiplyExample,
+        divideExample,
+      });
+
+      return null;
+    }
+
+    export default App;
+    ```
 
 <h2 class="header">Questions</h2>
 
