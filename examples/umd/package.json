@@ -1,0 +1,19 @@
+{
+  "name": "umd",
+  "version": "1.0.0",
+  "description": "A quick example of math.js library being used with UMD",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server ./"
+  },
+  "keywords": [],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC",
+  "dependencies": {
+    "nsp-math": "file:../.."
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

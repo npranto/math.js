@@ -1,0 +1,16 @@
+{
+  "name": "cjs",
+  "version": "1.0.0",
+  "description": "A quick example of math.js library being used with ES Module",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC",
+  "dependencies": {
+    "nsp-math": "file:../.."
+  }
+}
