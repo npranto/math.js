@@ -265,6 +265,14 @@ dist
   }
   ```
   - now, prettier should automatically format your code when you saves
+- Add .eslintignore + .prettierignore files
+  - to disable certain files or directories from being included in linting or formating process
+  - apply it "dist" or "build" directories mostly
+  - example:
+  ```
+  dist
+  node_modules
+  ```
 
 ### Setup "Husky" for Git Hooks
 
@@ -280,9 +288,28 @@ dist
 }
 ```
 
-### Add Rollup Bundler:
+### Add Rollup Bundler
 
 - a robust setup instruction - https://risanb.com/code/bundling-your-javascript-library-with-rollup/
+
+### Setup peerDependencies
+- since we do not want third party packages that our library is using to be included as part our library production builds (to reduce build size), we need to setup peer dependencies for them. In that case, consumers of our library would have to install them seprately.
+- setup peerDependencies inside package.json file like this:
+```
+"peerDependencies": {
+  "lodash": "4.17.15"
+}
+```
+
+### Specify "engine" for Library
+- setup engines inside package.json file like this:
+```
+"engines": {
+  "node": ">=8" // usually the same as babel config target env. for node
+}
+```
+
+
 
 <h2 class="header">Questions</h2>
 
@@ -294,6 +321,8 @@ dist
 - Can I use CommonJS module on the browser? What about support for Node core modules (i.e., child_process, net). How can I ensure that browser can use that as well?
 - Find a tutorial for editorconfig and how to set it up on VSCode and Atom
 - look into creative UIs for running pre-commit hooks (like w/ loading spinners and so on)
+- read more on babel presets and babel parser in general
+- TODO: only minify builds on production
 
 <style>
   .header {

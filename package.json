@@ -2,13 +2,19 @@
   "name": "nsp-math",
   "version": "0.0.1",
   "description": "A simple math library to demonstrate a modern setup of a library or an NPM package",
-  "main": "index.js",
+  "main": "build/index.min.js",
+  "browser": "build/index.umd.min.js",
+  "module": "build/index.es.min.js",
+  "engines": {
+    "node": ">= 6"
+  },
   "scripts": {
     "ci": "npx rimraf node_modules && npm install",
     "lint": "npx eslint ./",
     "lint:fix": "npx eslint ./ --fix",
     "format": "npx prettier-eslint \"$PWD/src/**/*.js\" --write",
-    "build": "rimraf build && npx rollup -c"
+    "build": "rimraf build && npx rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
