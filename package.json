@@ -1,6 +1,6 @@
 {
   "name": "nsp-math",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple math library to demonstrate a modern setup of a library or an NPM package",
   "main": "build/index.min.js",
   "browser": "build/index.umd.min.js",

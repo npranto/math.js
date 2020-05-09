@@ -445,6 +445,28 @@ dist
 },
 ```
 
+### Configure NPM:
+- on the root, configure NPM with the following commands:
+  - `npm set init-author-name "Nazmuz Shakib Pranto"`
+  - `npm set init-author-email "npranto@gmail.com"`
+  - `npm set init-author-url "https://github.com/npranto"`
+  - `npm set init-license "MIT"`
+  - `npm set save-exact "true"`
+- login to NPM: https://www.npmjs.com/login
+- OR, create a new account first - https://www.npmjs.com/signup
+- now, go back to command line and login to NPM with CLI
+  - run `npm adduser` and enter in username, password and email (behind the scenes, the command `npm adduser` command generates an access token to communicate with NPM)
+
+### Publish to NPM:
+- on the root, run `npm publish`
+- once the library w/ published w/ specified version from package.json, access it through https://www.npmjs.com/package/[PACKAGE_NAME]
+
+### Releasing Version to GitHub with Tags:
+- Adding a tag targets a specific commit hash from history
+- To create a new tag, run `git tag [TAG_NAME]` from the root. A tag name is usually the current version of the your project, i.e., "v1.0.0"
+- Now, to push to the new tag to remote GitHub, run `npm push --tags`
+
+
 <h2 class="header">Questions</h2>
 
 - Why git and not any other version control?
